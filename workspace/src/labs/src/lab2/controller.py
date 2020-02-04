@@ -28,10 +28,16 @@ class PID():
 		self.kp = kp
 		self.ki = ki
 		self.kd = kd
+		self.E = 0 # integration of error
+		self.e_prev = 0; # previous error value
 	
 	def acc_calculate(self, speed_reference, speed_current):
+
+		e = speed_reference - speed_current
+		self.E = self.E + e
+		self.e_prev = e
 			 
-	 	acc = TODO
+	 	acc = self.kp*e + self.ki*self.E  + self.kd*(e-self.e_prev)
 
 	 	return acc
 	
