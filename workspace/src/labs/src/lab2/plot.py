@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import os
 import matplotlib.patches as patches
 
-bag = rosbag.Bag(os.path.expanduser("~/FILENAMEHERE.bag"))
+bag = rosbag.Bag(os.path.expanduser("~/Documents/ros_logs/_2020-02-04-18-21-22.bag"))
 
 
 topics = bag.get_type_and_topic_info()[1].keys()

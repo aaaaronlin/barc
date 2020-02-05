@@ -66,7 +66,7 @@ def controller():
 	v_ref = 8 # reference speed is 8 m/s
 	
 	# Initialize the PID controller with your tuned gains
-	PID_control = PID(kp=0.5, ki=0.5, kd=0.5)
+	PID_control = PID(kp=10.0, ki=3.0, kd=1.0)
 	
 	while not rospy.is_shutdown():
 		# acceleration calculated from PID controller.
