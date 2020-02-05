@@ -34,8 +34,8 @@ class PID():
 	def acc_calculate(self, speed_reference, speed_current):
 
 		e = speed_reference - speed_current
-		self.E = self.E + e
-		self.e_prev = e
+		self.E = self.E + e # integral
+		self.e_prev = e # derivative
 			 
 	 	acc = self.kp*e + self.ki*self.E  + self.kd*(e-self.e_prev)
 
