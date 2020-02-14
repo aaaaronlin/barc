@@ -9,10 +9,13 @@
 
 
     <!-- Controller -->
-    <node pkg="labs" type="controller.py" name="pid" />
+    <node pkg="labs" type="key_listener.py" name="keyinput" />
 
     <!-- Simulator -->
     <node pkg="labs" type="vehicle_simulator.py" name="simulator" />
+
+    <!-- Visualizer -->
+    <node pkg="labs" type="view_car_trajectory.py" name="camera" />
 
     <!-- Record the experiment data -->
     <node pkg="rosbag" type="record" name="rosbag_record" args="-o /home/aaron/Documents/ros_logs/ -a" />
